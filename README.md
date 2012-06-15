@@ -1,4 +1,3 @@
-pretty-camel
-============
+# Pretty Camel
 
-Node module to prettify camel cased strings
+Node module to prettify camel cased strings.
