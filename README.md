@@ -1,4 +1,5 @@
 # Pretty Camel
+"!https://secure.travis-ci.org/softek/pretty-camel.png!":http://travis-ci.org/softek/pretty-camel
 
 Node module to prettify camel cased strings. Here are few examples of prettification.
 * procedureCode -> Procedure Code
@@ -12,6 +13,11 @@ The following rules are applied to input strings:
 * Words separated by uppercase letters, numbers, underscores, dashes, and periods
 * Each word is separated by a space
 * A sequence of capital letters and numbers is considered to be one word
+
+## Install
+```
+npm install pretty-camel
+```
 
 ## Sample Usage
 
