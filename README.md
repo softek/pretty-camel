@@ -1,5 +1,5 @@
 # Pretty Camel
-"!https://secure.travis-ci.org/softek/pretty-camel.png!":http://travis-ci.org/softek/pretty-camel
+[![Build Status](https://secure.travis-ci.org/softek/pretty-camel.png?branch=master)](http://travis-ci.org/softek/pretty-camel)
 
 Node module to prettify camel cased strings. Here are few examples of prettification.
 * procedureCode -> Procedure Code
