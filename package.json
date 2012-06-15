@@ -1,20 +1,28 @@
 {
-  "name" : "pretty-camel", 
-  "description" : "Node module to prettify camel cased strings.", 
-  "tags" : ["camel-case", "prettify", "format"], 
-  "version" : "0.0.1", 
-  "author" : "Blake VanLandingham <blakevanlan@gmail.com>",
-  "repository" : { 
-    "type" : "git", 
-    "url" : "https://github.com/blakevanlan/pretty-camel.git"
+  "name": "pretty-camel",
+  "description": "Node module to prettify camel cased strings.",
+  "tags": [
+    "camel-case",
+    "prettify",
+    "format"
+  ],
+  "version": "0.0.1",
+  "author": "Blake VanLandingham <blakevanlan@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakevanlan/pretty-camel.git"
   },
   "devDependencies": {
     "should": "0.6.3",
     "mocha": "1.1.0"
   },
-  "engines" : [ "node >= 0.4.7" ], 
-  "main" : "./main",
-  "scripts": { 
-    "test": "mocha tests.js --reporter spec" 
-  }
+  "engines": [
+    "node >= 0.4.7"
+  ],
+  "main": "./main",
+  "scripts": {
+    "test": "mocha tests.js --reporter spec"
+  },
+  "dependencies": {},
+  "optionalDependencies": {}
 }
