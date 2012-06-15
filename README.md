@@ -1,3 +1,25 @@
 # Pretty Camel
 
-Node module to prettify camel cased strings.
+Node module to prettify camel cased strings. Here are few examples of prettification.
+* procedureCode -> Procedure Code
+* hospitalCPTCode -> Hospital CPT Code
+* eatAHotdog -> Eat A Hotdog
+* procCodeA938 -> Proc Code A938
+* procA39BCode -> Proc A39B Code
+
+## Rules
+The following rules are applied to input strings:
+* Words separated by uppercase letters, numbers, underscores, dashes, and periods
+* Each word is separated by a space
+* A sequence of capital letters and numbers is considered to be one word
+
+## Sample Usage
+
+```javascript
+var prettyCamel = require("pretty-camel");
+var input = "hospitalCPTCode";
+var output = prettyCamel(input);
+
+console.log(output);
+```
+The outputs is ```Hospital CPT Code```
