@@ -29,3 +29,14 @@ var output = prettyCamel(input);
 console.log(output);
 ```
 The outputs is ```Hospital CPT Code```
+
+## Express Middleware
+If you're using Express and want access to prettyCamel() in your views, add the following piece of middleware to your server:
+
+```javascript
+var prettyCamel = require("pretty-camel");
+var express = require("express");
+var app = express.createServer();
+
+app.use(prettyCamel.middleware);
+```

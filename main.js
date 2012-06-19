@@ -11,3 +11,8 @@ module.exports = function(input) {
    }
    return input;
 };
+
+module.exports.middleware = function(request, response, next) {
+   response.local("prettyCamel", module.exports);
+   next();
+};
