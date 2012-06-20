@@ -55,9 +55,19 @@ describe("prettyCamel", function() {
       output = prettyCamel("procedure-A343-Code");
       return output.should.equal("Procedure A343 Code");
    });
-   return it("should treat periods as spaces", function() {
+   it("should treat periods as spaces", function() {
       var output;
       output = prettyCamel("procedure.A343.Code");
       return output.should.equal("Procedure A343 Code");
+   });
+   it("should only capitalize the first letter if in sentence style", function() {
+      var output
+      output = prettyCamel("sentenceCaseThisDude", { "case": "sentence" });
+      return output.should.equal("Sentence case this dude");
+   });
+   it("should not lower case 'abbreviated' if in sentence style", function() {
+      var output;
+      output = prettyCamel("procedureA34V9Code", { "case": "sentence" });
+      return output.should.equal("Procedure A34V9 code");
    });
 });
