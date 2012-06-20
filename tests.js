@@ -60,14 +60,29 @@ describe("prettyCamel", function() {
       output = prettyCamel("procedure.A343.Code");
       return output.should.equal("Procedure A343 Code");
    });
-   it("should only capitalize the first letter if in sentence style", function() {
+   it("should only capitalize the first letter if in sentence case", function() {
       var output
       output = prettyCamel("sentenceCaseThisDude", { "case": "sentence" });
       return output.should.equal("Sentence case this dude");
    });
-   it("should not lower case 'abbreviated' if in sentence style", function() {
+   it("should not lower case 'abbreviated' if in sentence case", function() {
       var output;
       output = prettyCamel("procedureA34V9Code", { "case": "sentence" });
       return output.should.equal("Procedure A34V9 code");
+   });
+   it("should lower case all words if in lower case", function() {
+      var output;
+      output = prettyCamel("lowerCaseMePlease", { "case": "lower" });
+      return output.should.equal("lower case me please");
+   });
+   it("should lower case single uppercase letters, like A", function() {
+      var output;
+      output = prettyCamel("eatAHotdog", { "case": "lower" });
+      return output.should.equal("eat a hotdog");
+   });
+   it("should not lower case 'abbreviated' if in lower case", function() {
+      var output;
+      output = prettyCamel("procedureA34V9Code", { "case": "lower" });
+      return output.should.equal("procedure A34V9 code");
    });
 });

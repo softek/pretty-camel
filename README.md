@@ -5,8 +5,10 @@ Node module to prettify camel cased strings. Here are few examples of prettifica
 * procedureCode -> Procedure Code
 * hospitalCPTCode -> Hospital CPT Code
 * eatAHotdog -> Eat A Hotdog
+* eatAHotdog -> eat a hotdog (lower case option)
 * procCodeA938 -> Proc Code A938
 * procA39BCode -> Proc A39B Code
+* procA39BCode -. Proc A39B code (sentence case option)
 
 ## Rules
 The following rules are applied to input strings:
@@ -15,11 +17,17 @@ The following rules are applied to input strings:
 * A sequence of capital letters and numbers is considered to be one word
 
 ## Options
-Options are passed in an object as the second parameter to Pretty Camel. Currently the only option available is sentence casing. 
+Options are passed in an object as the second parameter to Pretty Camel. Currently the only option available is casing. 
+
+### Case Option
+* "title"- (default) Uppercases the first letter of every word
+* "sentence"- Uppercases the first letter of the first word and lowercases all other words
+* "lower"- Lowercases all words except for abbreviation
+
 ```javascript
 var prettyCamel = require("pretty-camel");
 prettyCamel(input, {
-   "case": "title" (default) | "sentence"
+   "case": "title" (default) | "sentence" | "lower"
 });
 ```
 
@@ -50,6 +58,18 @@ var output = prettyCamel(input, options);
 console.log(output);
 ```
 The outputs is ```Hospital CPT code```
+
+```javascript
+var prettyCamel = require("pretty-camel");
+var input = "hospitalCPTCode";
+var options = {
+   "case": "lower" 
+};
+var output = prettyCamel(input, options);
+
+console.log(output);
+```
+The outputs is ```hospital CPT code```
 
 ## Express Middleware
 If you're using Express and want access to prettyCamel() in your views, add the following piece of middleware to your server:
