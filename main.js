@@ -1,6 +1,10 @@
 module.exports = function(input, options) {
    var match, matches, words, i;
 
+   if (input == void 0) {
+      throw new Error("Input must be specified.");
+   }
+
    options = options || {};
    words = input.match(/[A-Z\d]+(?![a-z])|[a-zA-Z][^A-Z\d\-_.]*/g);
 

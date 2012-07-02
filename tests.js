@@ -5,16 +5,19 @@ prettyCamel = require("./main");
 should = require("should");
 
 describe("prettyCamel", function() {
+   it("should throw an error when input is undefined", function() {
+      prettyCamel.should.throw();
+   });
    it("should return empty string when input is empty", function() {
-      var output
+      var output;
       output = prettyCamel("");
       return output.should.equal("");
    });
    it("should return the input when the input contains no words", function() {
-      var output
+      var output;
       output = prettyCamel(".[]&^");
       return output.should.equal(".[]&^");
-   })
+   });
    it("should capitalize the first letter for lower camel case", function() {
       var output;
       output = prettyCamel("procedureCode");
