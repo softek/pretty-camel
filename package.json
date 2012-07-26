@@ -10,7 +10,7 @@
   "author": "Blake VanLandingham <blakevanlan@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/blakevanlan/pretty-camel.git"
+    "url": "git://github.com/softek/pretty-camel.git"
   },
   "devDependencies": {
     "should": "0.6.3",
