@@ -6,7 +6,7 @@
     "prettify",
     "format"
   ],
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Blake VanLandingham <blakevanlan@gmail.com>",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   ],
   "main": "./main",
   "scripts": {
-    "test": "mocha tests.js --reporter spec"
+    "test": "mocha --recursive --reporter spec"
   },
   "dependencies": {},
   "optionalDependencies": {}
