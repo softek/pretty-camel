@@ -1,7 +1,23 @@
 # Pretty Camel
 [![Build Status](https://secure.travis-ci.org/softek/pretty-camel.png?branch=master)](http://travis-ci.org/softek/pretty-camel)
 
-Node module to prettify camel cased strings. Here are few examples of prettification.
+Node module to format to and from camel case.
+
+## toWords()
+
+```javascript
+var prettyCamel = require("pretty-camel");
+prettyCamel(input, {
+   "case": "title" (default) | "sentence" | "lower"
+});
+prettyCamel.toWords(input, {
+   "case": "title" (default) | "sentence" | "lower"
+});
+```
+
+`prettyCamel.toWords()` is aliased to `prettyCamel()` so it can be used either way.
+
+Here are a few examples of prettification:
 * procedureCode -> Procedure Code
 * hospitalCPTCode -> Hospital CPT Code
 * eatAHotdog -> Eat A Hotdog
@@ -10,31 +26,40 @@ Node module to prettify camel cased strings. Here are few examples of prettifica
 * procA39BCode -> Proc A39B Code
 * procA39BCode -. Proc A39B code (sentence case option)
 
-## Rules
+### Rules
 The following rules are applied to input strings:
 * Words separated by uppercase letters, numbers, underscores, dashes, and periods
 * Each word is separated by a space
 * A sequence of capital letters and numbers is considered to be one word
 
-## Options
-Options are passed in an object as the second parameter to Pretty Camel. Currently the only option available is casing. 
+### Options
+Options are passed in an object as the second parameter. Currently the only option available is casing. 
 
-### Case Option
+#### Case Option
 * "title"- (default) Uppercases the first letter of every word
 * "sentence"- Uppercases the first letter of the first word and lowercases all other words
 * "lower"- Lowercases all words except for abbreviation
 
+## toCamelCase()
+
 ```javascript
 var prettyCamel = require("pretty-camel");
-prettyCamel(input, {
-   "case": "title" (default) | "sentence" | "lower"
+prettyCamel.toCamelCase(input, {
+   "case": "lower" (default) | "upper"
 });
 ```
 
-## Install
-```
-npm install pretty-camel
-```
+Here are a few examples:
+* Procedure Code -> procedureCode
+* Procedure-code -> procedureCode
+* Procedure_code -> ProcedureCode (upper case option)
+
+### Options
+Options are passed in an object as the second parameter. Currently the only option available is casing. 
+
+#### Case Option
+* "lower"- (default) Lowercases the first letter of the first word
+* "upper"- Uppercases the first letter of the first word
 
 ## Sample Usage
 
@@ -53,7 +78,7 @@ var input = "hospitalCPTCode";
 var options = {
    "case": "sentence" 
 };
-var output = prettyCamel(input, options);
+var output = prettyCamel.toWords(input, options);
 
 console.log(output);
 ```
@@ -70,6 +95,23 @@ var output = prettyCamel(input, options);
 console.log(output);
 ```
 The outputs is ```hospital CPT code```
+
+```javascript
+var prettyCamel = require("pretty-camel");
+var input = "hospital_CPT_Code";
+var options = {
+   "case": "upper" 
+};
+var output = prettyCamel.toUpperCase(input, options);
+
+console.log(output);
+```
+The outputs is ```HospitalCPTCode```
+
+## Install
+``` bash
+npm install pretty-camel
+```
 
 ## Express Middleware
 If you're using Express and want access to prettyCamel() in your views, add the following piece of middleware to your server:
