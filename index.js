@@ -55,12 +55,16 @@ module.exports.toCamelCase = function (input, options) {
 };
 
 var upperCaseWord = function (value) {
-   return value[0].toUpperCase() + value.substring(1);
-}
+   return isAcronym(value) ? value : value[0].toUpperCase() + value.substring(1);
+};
 
 var lowerCaseWord = function (value) {
-   return value[0].toLowerCase() + value.substring(1);
-}
+   return isAcronym(value) ? value : value[0].toLowerCase() + value.substring(1);
+};
+
+var isAcronym = function (value) {
+   return value.length > 1 && value.toUpperCase() === value;
+};
 
 module.exports.middleware = function (request, response, next) {
    response.local("prettyCamel", module.exports);

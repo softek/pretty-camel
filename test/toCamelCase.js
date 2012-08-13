@@ -47,9 +47,19 @@ describe("prettyCamel- toCamelCase()", function() {
       return output.should.equal("procedureCode");
    });
 
+   it("should not lower case first letter if in lower case and acronym", function() {
+      var output = toCamelCase("ID_Number");
+      return output.should.equal("IDNumber");
+   });
+
    it("should upper case first letter if in upper case", function() {
       var output = toCamelCase("procedure_Code", { "case": "upper" });
       return output.should.equal("ProcedureCode");
+   });
+
+   it("should leave casing alone if in upper case and acronym", function() {
+      var output = toCamelCase("ID_Number", { "case": "upper" });
+      return output.should.equal("IDNumber");
    });
 
    it("should upper case all words after the first", function() {
