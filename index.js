@@ -67,6 +67,6 @@ var isAcronym = function (value) {
 };
 
 module.exports.middleware = function (request, response, next) {
-   response.local("prettyCamel", module.exports);
+   response.locals.prettyCamel = module.exports;
    next();
 };

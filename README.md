@@ -123,3 +123,5 @@ var app = express.createServer();
 
 app.use(prettyCamel.middleware);
 ```
+
+Version 0.0.7 was compatible with Express 2.x and 0.0.8 and above are compatible with Express 3.x.
